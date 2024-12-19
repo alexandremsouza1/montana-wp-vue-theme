@@ -95,5 +95,13 @@ function montana_assets() {
     wp_enqueue_style('vue-style', get_template_directory_uri() . '/assets/css/styles.css', array(), time(), 'all');
 
     wp_enqueue_script('vue-bundle', get_template_directory_uri() . '/assets/js/bundle.js', array('jquery'), time(), true);
+
+    wp_localize_script('vue-bundle', 'vueVars', array(
+        'carouselImages' => array(
+            get_template_directory_uri() . '/assets/images/carousel/slide1.jpg',
+            get_template_directory_uri() . '/assets/images/carousel/slide2.jpg',
+            get_template_directory_uri() . '/assets/images/carousel/slide3.jpg',
+        )
+    ));
 }
 add_action('wp_enqueue_scripts', 'montana_assets');

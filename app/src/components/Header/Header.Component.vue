@@ -1,47 +1,29 @@
 <template>
-    <header class="header-section p-4 bg-gray-50">
-        <div class="container mx-auto">
-            <nav class="">
-                <div class="relative flex items-center justify-between">
-                    <div class="logo flex flex-1 items-center justify-start">
-                        <router-link to="/" class="text-3xl font-light"
-                            >Montana News</router-link
-                        >
-                    </div>
-                    <div
-                        class="navigation-menu flex flex-1 items-center justify-end space-x-8"
-                    >
-                        <router-link
-                            to="/"
-                            class="text-base font-medium not-italic leading-6"
-                            >Home</router-link
-                        >
-                        <router-link
-                            to="/latest/"
-                            class="text-base font-medium not-italic leading-6"
-                            >Latest</router-link
-                        >
-                        <router-link
-                            to="/blog/"
-                            class="text-base font-medium not-italic leading-6"
-                            >Blog</router-link
-                        >
-                        <router-link
-                            to="/contact/"
-                            class="text-base font-medium not-italic leading-6"
-                            >Contact</router-link
-                        >
-                    </div>
-                </div>
-            </nav>
+    <header class="flex items-center justify-between py-4 px-6 bg-white">
+      <div class="flex items-center">
+        <div class="flex items-center mr-10">
+          <div class="w-6 h-6 bg-black rounded mr-2"></div>
+          <span class="font-bold text-lg">LicenseManager</span>
         </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="#features" class="text-[#000000] hover:text-[#525252]">Features</a></li>
+            <li><a href="#pricing" class="text-[#000000] hover:text-[#525252]">Pricing</a></li>
+            <li><a href="#testimonials" class="text-[#000000] hover:text-[#525252]">Testimonials</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-[#000000] hover:text-[#525252]">Sign In</a>
+        <a href="#" class="bg-black text-white px-4 py-2 rounded hover:bg-[#525252]">Get Started</a>
+      </div>
     </header>
-</template>
-<script>
-export default {
-    data() {
-        return {};
-    },
-    methods: {},
-};
-</script>
+  </template>
+  
+  <script setup>
+  // No additional script needed for this component
+  </script>
+  
+  <style scoped>
+  /* Any component-specific styles can go here */
+  </style>

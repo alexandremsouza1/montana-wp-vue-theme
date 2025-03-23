@@ -105,3 +105,4 @@ function montana_assets() {
     ));
 }
 add_action('wp_enqueue_scripts', 'montana_assets');
+

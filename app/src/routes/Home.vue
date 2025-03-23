@@ -4,6 +4,7 @@
             <ImageCarousel />
             <Description />
             <PricingPages />
+            <Testimonials />
         </div>
     </section>
 </template>
@@ -11,12 +12,14 @@
 import PricingPages from '../components/Pricing/PricingPages.vue'
 import ImageCarousel from '../components/Carousel/ImageCarousel.vue'
 import Description from '../components/Description/index.vue'
+import Testimonials from '../components/Testimonials/Testimonials.vue'
 export default{
     name: 'Home',
     components: {
         PricingPages,
         ImageCarousel,
-        Description
+        Description,
+        Testimonials
     }
 }
 </script>

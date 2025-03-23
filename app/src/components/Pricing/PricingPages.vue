@@ -1,179 +1,123 @@
 <template>
-    <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">Choose your plan</h1>
-            <p class="text-lg text-gray-600">Select the perfect plan for your needs</p>
+    <section id="pricing" class="py-16 bg-white">
+      <h2 class="text-center text-2xl font-bold mb-12">Simple, Transparent Pricing</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Starter Plan -->
+        <div class="border border-[#e5e7eb] rounded-lg p-8">
+          <h3 class="font-bold mb-4">Starter</h3>
+          <div class="flex items-end mb-6">
+            <span class="text-3xl font-bold">$29</span>
+            <span class="text-[#525252] text-sm">/month</span>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Up to 100 licenses</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Basic analytics</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Email support</span>
+            </li>
+          </ul>
+          
+          <button @click="createLicense('Starter')" class="w-full py-2 border border-[#e5e7eb] rounded hover:bg-[#fafafa] transition-colors">
+            Get Started
+          </button>
         </div>
-
-        <!-- Pricing Cards -->
-        <div class="max-w-7xl mx-auto grid gap-8 lg:grid-cols-3 mb-16">
-            <!-- Professional Plan -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="px-6 py-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Professional</h3>
-                    <div class="mt-4 flex items-baseline">
-                        <span class="text-5xl font-extrabold text-gray-900">$509</span>
-                        <span class="ml-2 text-gray-500">/month</span>
-                    </div>
-                    <ul class="mt-6 space-y-4">
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">24/7 Support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Analytics Dashboard</span>
-                        </li>
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">API Access</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="mt-8 w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-150">
-                        Get started
-                    </button>
-                </div>
-            </div>
-
-            <!-- Business Plan -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-blue-500">
-                <div class="px-6 py-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Business</h3>
-                    <div class="mt-4 flex items-baseline">
-                        <span class="text-5xl font-extrabold text-gray-900">$849</span>
-                        <span class="ml-2 text-gray-500">/month</span>
-                    </div>
-                    <ul class="mt-6 space-y-4">
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Everything from Professional</span>
-                        </li>
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Advanced Analytics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Custom Integrations</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="mt-8 w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-150">
-                        Get started
-                    </button>
-                </div>
-            </div>
-
-            <!-- Enterprise Plan -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="px-6 py-8">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise</h3>
-                    <div class="mt-4 flex items-baseline">
-                        <span class="text-5xl font-extrabold text-gray-900">$1,699</span>
-                        <span class="ml-2 text-gray-500">/month</span>
-                    </div>
-                    <ul class="mt-6 space-y-4">
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Everything from Business plus...</span>
-                        </li>
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Dedicated Support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <CheckIcon class="h-5 w-5 text-green-500 mr-2" />
-                            <span class="text-gray-600">Custom Solutions</span>
-                        </li>
-                    </ul>
-                    <button
-                        class="mt-8 w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition duration-150">
-                        Get started
-                    </button>
-                </div>
-            </div>
+        
+        <!-- Professional Plan -->
+        <div class="border border-[#e5e7eb] rounded-lg p-8">
+          <h3 class="font-bold mb-4">Professional</h3>
+          <div class="flex items-end mb-6">
+            <span class="text-3xl font-bold">$99</span>
+            <span class="text-[#525252] text-sm">/month</span>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Up to 1000 licenses</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Advanced analytics</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Priority support</span>
+            </li>
+          </ul>
+          
+          <button @click="createLicense('Professional')" class="w-full py-2 bg-black text-white rounded hover:bg-[#525252] transition-colors">
+            Get Started
+          </button>
         </div>
-
-        <!-- Feature Comparison Table -->
-        <div class="max-w-7xl mx-auto">
-            <table class="w-full">
-                <thead>
-                    <tr class="border-t border-gray-200">
-                        <th class="py-5 px-4 text-left text-sm font-medium text-gray-500">Features</th>
-                        <th class="py-5 px-4 text-center text-sm font-medium text-gray-500">Professional</th>
-                        <th class="py-5 px-4 text-center text-sm font-medium text-gray-500">Business</th>
-                        <th class="py-5 px-4 text-center text-sm font-medium text-gray-500">Enterprise</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200">
-                    <tr v-for="feature in features" :key="feature.name">
-                        <td class="py-4 px-4 text-sm text-gray-900">{{ feature.name }}</td>
-                        <td class="py-4 px-4 text-center">
-                            <CheckIcon v-if="feature.professional" class="h-5 w-5 text-green-500 mx-auto" />
-                        </td>
-                        <td class="py-4 px-4 text-center">
-                            <CheckIcon v-if="feature.business" class="h-5 w-5 text-green-500 mx-auto" />
-                        </td>
-                        <td class="py-4 px-4 text-center">
-                            <CheckIcon v-if="feature.enterprise" class="h-5 w-5 text-green-500 mx-auto" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        
+        <!-- Enterprise Plan -->
+        <div class="border border-[#e5e7eb] rounded-lg p-8">
+          <h3 class="font-bold mb-4">Enterprise</h3>
+          <div class="flex items-end mb-6">
+            <span class="text-3xl font-bold">Custom</span>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Unlimited licenses</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>Custom features</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-black mr-2">✓</span>
+              <span>24/7 support</span>
+            </li>
+          </ul>
+          
+          <button @click="createLicense('Enterprise')" class="w-full py-2 border border-[#e5e7eb] rounded hover:bg-[#fafafa] transition-colors">
+            Contact Sales
+          </button>
         </div>
-    </div>
-</template>
-
-<script>
-import { CheckIcon } from '@heroicons/vue/20/solid';
-
-export default {
-    components: {
-        CheckIcon,
-    },
-    data() {
-        return {
-            features: [
-                {
-                    name: 'Basic features',
-                    professional: true,
-                    business: true,
-                    enterprise: true,
-                },
-                {
-                    name: 'Advanced analytics',
-                    professional: false,
-                    business: true,
-                    enterprise: true,
-                },
-                {
-                    name: 'Custom integrations',
-                    professional: false,
-                    business: true,
-                    enterprise: true,
-                },
-                {
-                    name: 'API access',
-                    professional: true,
-                    business: true,
-                    enterprise: true,
-                },
-                {
-                    name: 'Dedicated support',
-                    professional: false,
-                    business: false,
-                    enterprise: true,
-                },
-                {
-                    name: 'Custom solutions',
-                    professional: false,
-                    business: false,
-                    enterprise: true,
-                },
-            ],
-        };
-    },
-};
-</script>
+      </div>
+    </section>
+  </template>
+  
+  <script setup>
+  import { ref } from 'vue';
+  
+  const createLicense = async (plan) => {
+    try {
+      const response = await fetch('http://localhost:8000/wp-json/lmfwc/v2/licenses', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + btoa('ck_a67435639e3e60acc52796ff37b5e4aefd2f92ee:cs_12ec520f3340d3276b0e4f3e352877763dcf6f6f') // Substitua pelas chaves API do WooCommerce
+        },
+        body: JSON.stringify({
+          product_id: plan === 'Starter' ? 12 : plan === 'Professional' ? 14 : 15, // IDs dos produtos no WooCommerce
+          order_id: Math.floor(Math.random() * 100000), // Pode ser substituído pelo ID real da compra
+          user_email: 'cliente@exemplo.com' // Capturar email do usuário
+        })
+      });
+  
+      const data = await response.json();
+      console.log('Licença criada:', data);
+      alert(`Licença gerada para o plano ${plan}: ${data.license_key}`);
+    } catch (error) {
+      console.error('Erro ao gerar licença:', error);
+      alert('Erro ao criar a licença.');
+    }
+  };
+  </script>
+  
+  
+  <style scoped>
+  /* Any component-specific styles can go here */
+  </style>

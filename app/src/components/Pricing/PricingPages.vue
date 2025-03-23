@@ -98,13 +98,21 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Basic ' + btoa('ck_a67435639e3e60acc52796ff37b5e4aefd2f92ee:cs_12ec520f3340d3276b0e4f3e352877763dcf6f6f') // Substitua pelas chaves API do WooCommerce
+          'Authorization': 'Basic ' + btoa('ck_2149196a2756fd73215d869b7f5e6a3d8bb23734:cs_9675777c1ef024308ddf643daf82a02a32f259ad') // Substitua pelas chaves API do WooCommerce
         },
         body: JSON.stringify({
           product_id: plan === 'Starter' ? 12 : plan === 'Professional' ? 14 : 15, // IDs dos produtos no WooCommerce
+          license_key: plan, 
           order_id: Math.floor(Math.random() * 100000), // Pode ser substituído pelo ID real da compra
-          user_email: 'cliente@exemplo.com' // Capturar email do usuário
+          status: "active",
+          user_id: '1' // Capturar email do usuário
         })
+        // "product_id": "14",
+        // "license_key": "Professional",
+        // "expires_at": "2025-12-01",
+        // "status": "active",
+        // "times_activated_max": 3,
+        // "user_id": "1"
       });
   
       const data = await response.json();
